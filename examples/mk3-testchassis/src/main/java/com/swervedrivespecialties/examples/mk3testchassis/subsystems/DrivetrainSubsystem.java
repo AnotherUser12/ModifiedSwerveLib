@@ -42,7 +42,7 @@ public class DrivetrainSubsystem extends SubsystemBase {
     public DrivetrainSubsystem() {
         ShuffleboardTab shuffleboardTab = Shuffleboard.getTab("Drivetrain");
 
-        frontLeftModule = Mk3SwerveModuleHelper.createNeo(
+        frontLeftModule = Mk3SwerveModuleHelper.createNeoTalonSRX(
                 shuffleboardTab.getLayout("Front Left Module", BuiltInLayouts.kList)
                         .withSize(2, 4)
                         .withPosition(0, 0),
@@ -53,7 +53,7 @@ public class DrivetrainSubsystem extends SubsystemBase {
                 Constants.FRONT_LEFT_MODULE_STEER_OFFSET
         );
 
-        frontRightModule = Mk3SwerveModuleHelper.createNeo(
+        frontRightModule = Mk3SwerveModuleHelper.createNeoTalonSRX(
                 shuffleboardTab.getLayout("Front Right Module", BuiltInLayouts.kList)
                         .withSize(2, 4)
                         .withPosition(2, 0),
@@ -64,7 +64,7 @@ public class DrivetrainSubsystem extends SubsystemBase {
                 Constants.FRONT_RIGHT_MODULE_STEER_OFFSET
         );
 
-        backLeftModule = Mk3SwerveModuleHelper.createNeo(
+        backLeftModule = Mk3SwerveModuleHelper.createNeoTalonSRX(
                 shuffleboardTab.getLayout("Back Left Module", BuiltInLayouts.kList)
                         .withSize(2, 4)
                         .withPosition(4, 0),
@@ -75,7 +75,7 @@ public class DrivetrainSubsystem extends SubsystemBase {
                 Constants.BACK_LEFT_MODULE_STEER_OFFSET
         );
 
-        backRightModule = Mk3SwerveModuleHelper.createNeo(
+        backRightModule = Mk3SwerveModuleHelper.createNeoTalonSRX(
                 shuffleboardTab.getLayout("Back Right Module", BuiltInLayouts.kList)
                         .withSize(2, 4)
                         .withPosition(6, 0),

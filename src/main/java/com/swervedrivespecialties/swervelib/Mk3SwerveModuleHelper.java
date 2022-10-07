@@ -17,8 +17,8 @@ public final class Mk3SwerveModuleHelper {
                 .build();
     }
 
-    private static SteerControllerFactory<?, Falcon500SteerConfiguration<CanCoderAbsoluteConfiguration>> getFalcon500SteerFactory(Mk3ModuleConfiguration configuration) {
-        return new Falcon500SteerControllerFactoryBuilder()
+    private static SteerControllerFactory<?, TalonSRXSteerConfiguration<CanCoderAbsoluteConfiguration>> getFalcon500SteerFactory(Mk3ModuleConfiguration configuration) {
+        return new TalonSRXSteerControllerFactoryBuilder()
                 .withVoltageCompensation(configuration.getNominalVoltage())
                 .withPidConstants(0.2, 0.0, 0.1)
                 .withCurrentLimit(configuration.getSteerCurrentLimit())
@@ -73,7 +73,7 @@ public final class Mk3SwerveModuleHelper {
         ).create(
                 container,
                 driveMotorPort,
-                new Falcon500SteerConfiguration<>(
+                new TalonSRXSteerConfiguration<>(
                         steerMotorPort,
                         new CanCoderAbsoluteConfiguration(steerEncoderPort, steerOffset)
                 )
@@ -128,7 +128,7 @@ public final class Mk3SwerveModuleHelper {
                 getFalcon500SteerFactory(configuration)
         ).create(
                 driveMotorPort,
-                new Falcon500SteerConfiguration<>(
+                new TalonSRXSteerConfiguration<>(
                         steerMotorPort,
                         new CanCoderAbsoluteConfiguration(steerEncoderPort, steerOffset)
                 )
@@ -406,7 +406,7 @@ public final class Mk3SwerveModuleHelper {
         ).create(
                 container,
                 driveMotorPort,
-                new Falcon500SteerConfiguration<>(
+                new TalonSRXSteerConfiguration<>(
                         steerMotorPort,
                         new CanCoderAbsoluteConfiguration(steerEncoderPort, steerOffset)
                 )
@@ -461,7 +461,7 @@ public final class Mk3SwerveModuleHelper {
                 getFalcon500SteerFactory(configuration)
         ).create(
                 driveMotorPort,
-                new Falcon500SteerConfiguration<>(
+                new TalonSRXSteerConfiguration<>(
                         steerMotorPort,
                         new CanCoderAbsoluteConfiguration(steerEncoderPort, steerOffset)
                 )
